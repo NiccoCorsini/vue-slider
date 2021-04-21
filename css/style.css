@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+#carusel{
+    margin: 0 auto;
+    padding: 2rem 3rem 0;
+    width: 80%;
+}
+
+.slider{
+    position: relative;
+    height: fit-content;
+}
+
+.slider .slide{
+    height: 500px;
+    box-shadow: 0px 2px 8px 0px rgba(128, 128, 128, 0.644);
+}
+
+.slider .slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .prev,
+.slider .next{
+    position: absolute;
+    top: calc(50% - 40px);
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.315);
+    padding: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 250ms;
+}
+
+.slider .prev:hover,
+.slider .next:hover{
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+.slider .prev:active,
+.slider .next:active{
+    color: black;
+}
+
+.slider .prev{
+    left: -3rem;
+}
+
+.slider .next{
+    right: -3rem;
+}
+
+.slider .dots{
+    margin: 1rem auto;
+    width: fit-content;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.315);;
+}
+
+.slider .dots .dot{
+    font-size: 6rem;
+    color: white;
+    cursor: pointer;
+    transition: color 250ms;
+}
+
+.slider .dots .dot:hover{
+    color: rgb(75, 75, 75);
+}
+
+.slider .dots .dot.active{
+    color: black;
+    animation: fadeIn 300ms forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

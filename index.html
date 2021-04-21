@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Slider</title>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- VUE -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.common.dev.min.js' integrity='sha512-PkyFg1MEb/EwsFAqzqvZqWdMT4ItV+E1NgOtfBC9X8UecJcO9bwirD+v/9tJwci4wTNHdNYBk4ev6ceb1hy73g==' crossorigin='anonymous'></script>
+</head>
+<body>
+    <!-- VUE APP -->
+    <div id="carusel">
+        <!-- SLIDER -->
+        <div 
+        @mouseenter="stopLoop"
+        @mouseleave="loop"
+        class="slider">
+            <!-- PREV -->
+            <div 
+            @click="prev" 
+            class="prev"
+            ><strong>&#x027E8;</strong></div>
+            <!-- SLIDE -->
+            <div class="slide">
+                <img :src="images[indexPhoto]" alt="">
+            </div>
+            <!-- NEXT -->
+            <div 
+            @click="next" 
+            class="next"
+            ><strong>&#x027E9;</strong></div>
+            <!-- DOTS -->
+            <div class="dots">
+                <span v-for="(dot, index) in images" :class="{active: index == indexPhoto}" 
+                @click="dotSlide(index)" 
+                class="dot">&#x000B7;</span>
+            </div>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
